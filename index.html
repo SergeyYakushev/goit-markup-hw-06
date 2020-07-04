@@ -60,9 +60,9 @@
             rows="8"
             placeholder="Комментарий"
           ></textarea>
-          <label for="comment"></label>
+          <label for=""></label>
 
-          <label class="label">
+          <label class="check-label">
             <input
               type="checkbox"
               name="checkbox"
@@ -70,10 +70,15 @@
               class="checkbox"
             />
             <span class="icon-check"></span>
-            <span class="policy">Соглашаюсь на все</span>
+            <span class="policy"
+              >Соглашаюсь с рассылкой и принимаю
+              <a href="#"> Условия договора</a></span
+            >
           </label>
 
-          <button type="submit">Отправить</button>
+          <div class="form-button">
+            <button type="submit" class="button">Отправить</button>
+          </div>
         </form>
 
         <button class="close" data-modal-close></button>
