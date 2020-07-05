@@ -90,7 +90,11 @@
               value="result"
               class="checkbox"
             />
-            <span class="icon-check"></span>
+
+            <svg class="icon-check">
+              <use href="./images/sprite.svg#icon-check"></use>
+            </svg>
+
             <span class="policy"
               >Соглашаюсь с рассылкой и принимаю
               <a href="#"> Условия договора</a></span
@@ -562,14 +566,22 @@
           </div>
           <!--доделать форму-->
           <div class="subscribe">
-            <p><b class="join-text">Подписаться на рассылку</b></p>
-            <a href="#" class="subscribe-link button">
-              Подписаться
-
-              <svg class="img-send" width="24" height="24">
-                <use href="./images/sprite.svg#icon-iconsend"></use>
-              </svg>
-            </a>
+            <form>
+              <b class="join-text">Подписаться на рассылку</b>
+              <label>
+                <input
+                  type="text"
+                  class="signup-input"
+                  name="signup"
+                  placeholder="E-mail"
+                />
+                <button type="submit" class="button">
+                  Подписаться<svg class="img-send" width="24" height="24">
+                    <use href="./images/sprite.svg#icon-iconsend"></use>
+                  </svg>
+                </button>
+              </label>
+            </form>
           </div>
         </div>
         <!-- Нижний блок футера -->
