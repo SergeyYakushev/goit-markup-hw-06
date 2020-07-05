@@ -32,13 +32,27 @@
               placeholder=" "
             />
             <span class="form-label">Имя</span>
-            <span class="icon"></span>
+
+            <svg class="icon">
+              <use
+                href="./images/sprite.svg#person-black"
+                width="12"
+                height="12"
+              ></use>
+            </svg>
           </label>
 
           <label class="form-field">
             <input class="form-input" type="tel" name="tel" placeholder=" " />
             <span class="form-label">Телефон</span>
-            <span class="icon"></span>
+
+            <svg class="icon">
+              <use
+                href="./images/sprite.svg#phone-black"
+                width="13"
+                height="13"
+              ></use>
+            </svg>
           </label>
 
           <label class="form-field">
@@ -49,18 +63,25 @@
               placeholder=" "
             />
             <span class="form-label">Почта</span>
-            <span class="icon"></span>
+
+            <svg class="icon">
+              <use
+                href="./images/sprite.svg#email-black"
+                width="15"
+                height="12"
+              ></use>
+            </svg>
           </label>
 
-          <textarea
-            class="comment"
-            name="comment"
-            id="comment"
-            cols="30"
-            rows="8"
-            placeholder="Комментарий"
-          ></textarea>
-          <label for=""></label>
+          <label for="comment" class="form-field">
+            <textarea
+              class="comment"
+              name="comment"
+              id="comment"
+              placeholder=" "
+            ></textarea>
+            <span class="text-label">Комментарий</span>
+          </label>
 
           <label class="check-label">
             <input
@@ -81,7 +102,15 @@
           </div>
         </form>
 
-        <button class="close" data-modal-close></button>
+        <button type="button" class="close" data-modal-close>
+          <svg class="close-black">
+            <use
+              href="./images/sprite.svg#close-black"
+              width="13"
+              height="13"
+            ></use>
+          </svg>
+        </button>
       </div>
     </div>
 

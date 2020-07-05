@@ -14,11 +14,13 @@ body {
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
 }
+
 /*Бекдроп с модалкой,
 в модалке форма*/
 
 .backdrop {
   position: fixed;
+  z-index: 99;
 
   width: 100%;
   height: 100%;
@@ -44,6 +46,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding-bottom: 40px;
 
   transform: translate(-50%, -50%);
 
@@ -54,8 +57,10 @@ body {
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
 .form {
 }
+
 .form-title {
   display: flex;
   align-items: center;
@@ -95,10 +100,27 @@ body {
 
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
-  color: brown;
-  transform: translateY(-40px);
+  color: var(--accent-color);
+  transform: translate(-25px, -40px);
 }
 
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus ~ .icon,
+.form-input:not(:placeholder-shown) ~ .icon {
+  fill: var(--accent-color);
+}
 .form-input {
   padding-left: 42px;
   width: 448px;
@@ -109,16 +131,16 @@ body {
 
   border-radius: 4px;
 }
-
 .form-field input::placeholder {
   color: tomato;
   font-weight: 600;
 }
 
+.form-input:focus ~ .icon {
+  color: blue;
+}
 .comment {
   padding: 12px 16px;
-  margin-bottom: 20px;
-  margin-left: 41px;
 
   width: 448px;
   height: 120px;
@@ -128,21 +150,18 @@ body {
   resize: none;
 }
 
-.icon {
+.text-label {
   position: absolute;
-  top: 50%;
-  left: 19px;
+  top: 12px;
+  left: 16px;
 
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: tomato;
-
-  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus ~ .icon {
-  background-color: blue;
+.comment:focus ~ .text-label,
+.comment:not(:placeholder-shown) ~ .text-label {
+  color: var(--accent-color);
+  transform: translate(-10px, -32px);
 }
 
 .form-input:focus {
@@ -152,7 +171,9 @@ body {
 /*Стилизация по атрибуту*/
 .topic-options input[type='checkbox'] {
 }
-
+.form-field .comment-field {
+  margin-bottom: 20px;
+}
 .check-label {
   display: flex;
   margin-left: auto;
@@ -165,6 +186,7 @@ body {
 
 .checkbox {
   display: flex;
+  margin-bottom: 30px;
 
   position: absolute;
 
@@ -214,10 +236,15 @@ body {
 
   color: #757575;
 }
+
 .close {
   position: absolute;
   right: 8px;
   top: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 30px;
   height: 30px;
@@ -225,7 +252,21 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+
+  cursor: pointer;
 }
+
+.close-black {
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  width: 15px;
+  height: 15px;
+}
+.close:hover .close-black {
+  fill: #2196f3;
+}
+
 .form-button {
   display: flex;
   align-items: center;
